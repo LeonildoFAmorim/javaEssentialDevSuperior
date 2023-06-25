@@ -1,0 +1,1 @@
+Execício array.
