@@ -1,9 +1,9 @@
-package array.aplicacao;
+package aplicacao;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-import array.entidades.Produto;
+import entidades.Produto;
 
 public class Programa {
 
