@@ -24,26 +24,27 @@ public class Programa {
 				id = scanner.nextInt();
 			}
 			System.out.print("Nome: ");
-			String nome = scanner.next();
+			scanner.nextLine();
+			String nome = scanner.nextLine();
 			System.out.print("Salário: ");
 			double salario = scanner.nextDouble();
+			System.out.println();
 			funcionarios.add(new Funcionario(id, nome, salario));
 		}
 		System.out.print("Digite o ID do funcionário que terá o salário aumentado: ");
 		int id = scanner.nextInt();
-		Funcionario funcionarioAumentoSalario = funcionarios.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
-		if (funcionarioAumentoSalario != null) {
+		if (idConstaNaLista(funcionarios, id) != null) {
 			System.out.print("Qual a porcentagem de aumento? ");
 			double porcentagemAumento = scanner.nextDouble();
-			funcionarioAumentoSalario.aumentarSalario(porcentagemAumento);
-		}else {
+			idConstaNaLista(funcionarios, id).aumentarSalario(porcentagemAumento);
+		} else {
 			System.out.println("ID não encontrado na lista.");
 		}
 		System.out.println();
+		System.out.println("Lista de funcionários:");
 		for (Funcionario funcionario : funcionarios) {
 			System.out.println(funcionario);
 		}
-			
 	}
 
 	public static boolean idRepetido(List<Funcionario> funcionarios, int id) {
@@ -51,8 +52,8 @@ public class Programa {
 		return funcionario != null;
 	}
 
-	public static boolean idConstaNaLista(List<Funcionario> funcionarios, int id) {
+	public static Funcionario idConstaNaLista(List<Funcionario> funcionarios, int id) {
 		Funcionario funcionario = funcionarios.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
-		return funcionario != null;
+		return funcionario;
 	}
 }
