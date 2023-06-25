@@ -29,44 +29,30 @@ public class Programa {
 			double salario = scanner.nextDouble();
 			funcionarios.add(new Funcionario(id, nome, salario));
 		}
-		System.out.print("Digite o ID do funcionário que terá o salário aumentado em 10%: ");
+		System.out.print("Digite o ID do funcionário que terá o salário aumentado: ");
 		int id = scanner.nextInt();
-		if (idConstaNaLista(funcionarios, id)) {
+		Funcionario funcionarioAumentoSalario = funcionarios.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		if (funcionarioAumentoSalario != null) {
 			System.out.print("Qual a porcentagem de aumento? ");
 			double porcentagemAumento = scanner.nextDouble();
-			for (Funcionario funcionario : funcionarios) {
-				if (funcionario.getId() == id) {
-					funcionario.aumentarSalario(porcentagemAumento);
-				}
-			}
-		} else {
+			funcionarioAumentoSalario.aumentarSalario(porcentagemAumento);
+		}else {
 			System.out.println("ID não encontrado na lista.");
 		}
-
 		System.out.println();
 		for (Funcionario funcionario : funcionarios) {
 			System.out.println(funcionario);
 		}
+			
 	}
 
 	public static boolean idRepetido(List<Funcionario> funcionarios, int id) {
-		boolean buscaId = false;
-		for (Funcionario funcionario : funcionarios) {
-			if (funcionario.getId() == id) {
-				buscaId = true;
-			}
-		}
-		return buscaId;
+		Funcionario funcionario = funcionarios.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		return funcionario != null;
 	}
 
 	public static boolean idConstaNaLista(List<Funcionario> funcionarios, int id) {
-		boolean buscaId = false;
-		for (Funcionario funcionario : funcionarios) {
-			if (funcionario.getId() == id) {
-				buscaId = true;
-			}
-		}
-		return buscaId;
+		Funcionario funcionario = funcionarios.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		return funcionario != null;
 	}
 }
-
