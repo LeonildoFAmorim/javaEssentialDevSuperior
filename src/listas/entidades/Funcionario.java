@@ -10,6 +10,9 @@ public class Funcionario {
 		this.id = id;
 		this.salario = salario;
 	}
+	
+	public Funcionario() {
+	}
 
 	public int getId() {
 		return id;
@@ -31,10 +34,6 @@ public class Funcionario {
 		return salario;
 	}
 
-	public void setSalario(double salario) {
-		this.salario = salario;
-	}
-
 	public void aumentarSalario(double porcentagem) {
 		salario += salario * porcentagem / 100;
 	}
@@ -43,5 +42,4 @@ public class Funcionario {
 	public String toString() {
 		return "ID: " + id + ", nome: " + nome + ", salario: " + String.format("%.2f", salario);
 	}
-
 }
