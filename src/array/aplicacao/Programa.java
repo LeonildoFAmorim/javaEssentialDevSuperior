@@ -38,7 +38,7 @@ public class Programa {
 		for (Produto produto : produtos) {
 			if (produto.calcularLucro() < 10) {
 				lucroAbaixo10Porcento++;
-			} else if (produto.calcularLucro() <= 20) {
+			} else if (produto.calcularLucro() < 20) {
 				lucroEntre10_20Porcento++;
 			} else {
 				lucroAcima20Porcento++;
