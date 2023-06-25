@@ -1,1 +1,1 @@
-Execício array.
+Execício array, listas.
