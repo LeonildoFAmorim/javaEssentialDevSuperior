@@ -1,4 +1,4 @@
-package entidades;
+package array.entidades;
 
 public class Produto {
 	private String nome;
