@@ -7,36 +7,36 @@ public class NegativosMatriz {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		int linhas;
-		int colunas;
+		int ordemMatriz;
+
 		do {
-			System.out.println("OBS.: Máximo 10 linhas e 10 colunas!");
-			System.out.print("Qual a quantidade de linhas da matriz? ");
-			linhas = scanner.nextInt();
-			System.out.print("Qual a quantidade de colunas da matriz? ");
-			colunas = scanner.nextInt();
+			System.out.println("OBS.: Máximo 10 linhas!");
+			System.out.print("Qual a ordem da matriz? ");
+			ordemMatriz = scanner.nextInt();
 
-		} while (umDosValoresMaiorQueDez(linhas, colunas));
+		} while (valorMaiorQueDez(ordemMatriz));
 
-		int[][] matriz = new int[linhas][colunas];
+		int[][] matriz = new int[ordemMatriz][ordemMatriz];
 
-		for (int i = 0; i < linhas; i++) {
-			for (int j = 0; j < colunas; j++) {
-				System.out.printf("Elemento [%d,%d]: ", i, j);
+		for (int i = 0; i < ordemMatriz; i++) {
+			System.out.println("Digite os elementos da " + (i + 1) + "ª linha:");
+			for (int j = 0; j < ordemMatriz; j++) {
 				matriz[i][j] = scanner.nextInt();
 			}
 		}
-		System.out.println("Vetor gerado (números negativos:)");
-		for (int i = 0; i < linhas; i++) {
-			for (int j = 0; j < colunas; j++) {
-				if (matriz[i][j] < 0) {
-					System.out.printf("%d ", matriz[i][j]);
+		System.out.println("Maior elemento de cada linha:");
+		for (int i = 0; i < ordemMatriz; i++) {
+			int maior = 0;
+			for (int j = 0; j < ordemMatriz; j++) {
+				if (matriz[i][j] > maior) {
+					maior = matriz[i][j];
 				}
 			}
+			System.out.println(maior);
 		}
 	}
 
-	public static boolean umDosValoresMaiorQueDez(int linha, int coluna) {
-		return linha > 10 || coluna > 10;
+	public static boolean valorMaiorQueDez(int linha) {
+		return linha > 10;
 	}
 }
