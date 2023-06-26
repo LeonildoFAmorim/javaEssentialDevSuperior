@@ -2,7 +2,7 @@ package matriz;
 
 import java.util.Scanner;
 
-public class Exercicio_2 {
+public class Exercicio_3 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -10,7 +10,7 @@ public class Exercicio_2 {
 		int linhas;
 		int colunas;
 		do {
-			System.out.println("OBS.: máximo 10 linhas e 10 colunas!");
+			System.out.println("OBS.: Máximo 10 linhas e 10 colunas!");
 			System.out.print("Qual a quantidade de linhas da matriz? ");
 			linhas = scanner.nextInt();
 			System.out.print("Qual a quantidade de colunas da matriz? ");
@@ -19,18 +19,20 @@ public class Exercicio_2 {
 		} while (umDosValoresMaiorQueDez(linhas, colunas));
 
 		int[][] matriz = new int[linhas][colunas];
-		int[] vetor = new int[linhas];
 
 		for (int i = 0; i < linhas; i++) {
-			System.out.println("Digite os elementos da " + (i + 1) + "ª linha:");
 			for (int j = 0; j < colunas; j++) {
+				System.out.printf("Elemento [%d,%d]: ", i, j);
 				matriz[i][j] = scanner.nextInt();
-				vetor[i] += matriz[i][j];
 			}
 		}
-		System.out.println("Vetor gerado (soma correspondente das linhas:)");
-		for (int i = 0; i < vetor.length; i++) {
-			System.out.printf("%d ", vetor[i]);
+		System.out.println("Vetor gerado (números negativos:)");
+		for (int i = 0; i < linhas; i++) {
+			for (int j = 0; j < colunas; j++) {
+				if (matriz[i][j] < 0) {
+					System.out.printf("%d ", matriz[i][j]);
+				}
+			}
 		}
 	}
 
