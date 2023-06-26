@@ -2,7 +2,7 @@ package matriz;
 
 import java.util.Scanner;
 
-public class Exercicio_2 {
+public class SomaLinhas {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
