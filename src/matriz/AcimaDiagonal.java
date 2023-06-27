@@ -21,6 +21,14 @@ public class AcimaDiagonal {
 				matriz[i][j] = scanner.nextInt();
 			}
 		}
+		System.out.println("Matriz inserida: ");
+		for (int i = 0; i < ordemMatriz; i++) {
+			System.out.println();
+			for (int j = 0; j < ordemMatriz; j++) {
+				System.out.printf("%d ", matriz[i][j]);
+			}
+		}
+		System.out.println();
 		int somaAcimaDiagonal = 0;
 		for (int i = 0; i < ordemMatriz; i++) {
 			for (int j = 0; j < ordemMatriz; j++) {
