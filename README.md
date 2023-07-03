@@ -1,1 +1,1 @@
-Execício array, listas, matriz.
+Execício array, listas, matriz, associção.
