@@ -22,9 +22,9 @@ public class ProdutoUsado extends Produto {
 		this.dataFabricacao = dataFabricacao;
 	}
 
-	public String taguePreco() {
-		return getNome() + "(usado) $ " 
-				+ String.format("%.2f", getPreco())
+	@Override
+	public String etiquetaPreco() {
+		return super.etiquetaPreco()
 				+ " (data da fabricação: " + dataFabricacao + ")";
 	}
 }

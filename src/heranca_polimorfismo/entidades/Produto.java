@@ -3,10 +3,10 @@ package heranca_polimorfismo.entidades;
 public class Produto {
 	private String nome;
 	private Double preco;
-	
+
 	public Produto() {
 	}
-	
+
 	public Produto(String nome, Double preco) {
 		this.nome = nome;
 		this.preco = preco;
@@ -28,7 +28,7 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public String taguePreco() {
-		return  nome + ", " + preco ;
+	public String etiquetaPreco() {
+		return nome + ", $ " + String.format("%.2f", preco);
 	}
 }

@@ -1,1 +1,1 @@
-Execício array, listas, matriz, associção.
+Execício array, listas, matriz, associação, herança, polimorfismo.

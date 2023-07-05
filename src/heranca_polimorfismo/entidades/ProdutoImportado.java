@@ -25,9 +25,8 @@ public class ProdutoImportado extends Produto {
 	}
 
 	@Override
-	public String taguePreco() {
-		return getNome()
-				+ " $" + getPreco()
-				+ " (alfândega: $" + taxaAlfandega + ")";
+	public String etiquetaPreco() {
+		return super.etiquetaPreco()
+				+ " (alfândega: $ " + taxaAlfandega + ")";
 	}
 }
