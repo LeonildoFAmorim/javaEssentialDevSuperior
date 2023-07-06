@@ -1,4 +1,4 @@
-package associacao.programa;
+package associacao.aplicacao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
