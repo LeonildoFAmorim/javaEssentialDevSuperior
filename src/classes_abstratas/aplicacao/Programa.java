@@ -42,19 +42,13 @@ public class Programa {
 		}
 		scanner.close();
 		System.out.println();
-		System.out.println("IMPOSTOS PAGOS:");
+		System.out.println("Impostos pagos:");
+		double totalImpostosPagos = 0;
 		for (Contribuinte contribuinte : listaContribuintes) {
 			System.out.println(contribuinte.getNome() + " $ " + String.format("%.2f", contribuinte.imposto()));
+			totalImpostosPagos += contribuinte.imposto();
 		}
 		System.out.println();
-		System.out.println("TOTAL DE IMPOSTO PAGO: " + impostoTotal(listaContribuintes));
-	}
-
-	public static Double impostoTotal(List<Contribuinte> listaContribuintes) {
-		Double totalImpostoPago = 0.0;
-		for (Contribuinte contribuinte : listaContribuintes) {
-			totalImpostoPago += contribuinte.imposto();
-		}
-		return totalImpostoPago;
+		System.out.println("Total de impostos pagos: $" + totalImpostosPagos);
 	}
 }
